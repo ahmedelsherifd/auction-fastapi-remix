@@ -4,6 +4,7 @@ from jose import JWTError, jwt
 from fastapi.security import OAuth2PasswordBearer
 from authlib.integrations.starlette_client import OAuth, OAuthError
 from starlette.config import Config
+
 from .config import get_settings
 
 SECRET_KEY = "09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7"

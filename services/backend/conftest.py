@@ -1,12 +1,9 @@
 from os import environ
 import pytest
 from fastapi.testclient import TestClient
-from app.database import SessionLocal, engine
+from app.database import SessionLocal, engine, Base
 
-from app.database import Base, engine
 import app.models
-
-environ["env"] = "testing"
 
 
 @pytest.fixture

@@ -1,6 +1,4 @@
-from fastapi.testclient import TestClient
 from . import crud
-from .main import app
 
 
 def test_view_get_products(db, client):

@@ -11,13 +11,13 @@ class Settings(BaseSettings):
     DBPASS: str
     GOOGLE_CLIENT_ID: str
     GOOGLE_CLIENT_SECRET: str
-    # model_config = SettingsConfigDict(env_file=Path(__file__).parent / ".env")
     model_config = SettingsConfigDict(env_file=Path(__file__).parent / ".env")
 
 
 @lru_cache
 def get_settings(env: str = os.getenv("env")):
     BASE_DIR = Path(__file__).resolve().parent.parent
+
     if env == "production":
         env_file = str(BASE_DIR / ".env.prod")
     elif env == "testing":
