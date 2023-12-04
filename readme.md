@@ -24,7 +24,7 @@ set password to "postgres"
 ```
 # log in into the psql console
 sudo -u postgres psql
-# log in into the psql console
+# set password
 postgres=# \password postgres
 ```
 
