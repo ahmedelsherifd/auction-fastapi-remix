@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, model_validator
 
 
 class Product(BaseModel):
@@ -31,3 +31,11 @@ class UserInput(BaseModel):
     name: str | None = None
     password: str
     password2: str
+
+    @model_validator(mode="after")
+    def check_passwords_match(self) -> "UserInput":
+        pw1 = self.password
+        pw2 = self.password2
+        if pw1 is not None and pw2 is not None and pw1 != pw2:
+            raise ValueError("passwords do not match")
+        return self

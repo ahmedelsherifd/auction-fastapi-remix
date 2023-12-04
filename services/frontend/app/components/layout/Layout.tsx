@@ -92,7 +92,8 @@ export default function Layout({ children, navigation, user }: LayoutProps) {
               <div className="flex-shrink-0 flex items-center px-4">
                 <img
                   className="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg"
+                  //src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg"
+                  src="https://i.postimg.cc/nrnFPbs7/logo.png"
                   alt="Workflow"
                 />
               </div>
@@ -145,7 +146,14 @@ export default function Layout({ children, navigation, user }: LayoutProps) {
           <div className="flex items-center flex-shrink-0 px-4">
             <img
               className="h-8 w-auto"
-              src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg"
+              //src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg"
+              src="https://i.postimg.cc/nrnFPbs7/logo.png"
+              alt="Workflow image"
+            />
+            <img
+              className="h-3 w-auto mt-1"
+              //src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg"
+              src="https://i.postimg.cc/59szcbJn/Versteigerung.png"
               alt="Workflow"
             />
           </div>

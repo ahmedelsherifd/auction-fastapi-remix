@@ -31,7 +31,7 @@ const { getSession, commitSession, destroySession } =
       //maxAge: 60,
       //path: "/",
       //sameSite: "lax",
-      //secrets: ["s3cret1"],
+      secrets: ["s3cret1"],
       //secure: true,
     },
   });

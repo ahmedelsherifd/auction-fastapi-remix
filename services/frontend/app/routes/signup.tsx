@@ -37,7 +37,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 
     session.set("access_token", token.access_token);
     session.set("token_type", token.token_type);
-    onLogin(session);
+
     return redirect("/dashboard", {
       headers: {
         "Set-Cookie": await commitSession(session),

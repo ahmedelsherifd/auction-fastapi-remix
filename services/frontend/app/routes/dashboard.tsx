@@ -16,7 +16,8 @@ import { LoaderFunctionArgs } from "react-router";
 import { loginRequired } from "~/utils";
 import { getSession } from "~/sessions";
 import { json, redirect } from "@remix-run/node";
-import { UsersService } from "client";
+import { UsersService, OpenAPI } from "client";
+
 const navigation = [
   { name: "Home", to: "/dashboard", icon: HomeIcon },
   { name: "Products", to: "/dashboard/products", icon: FolderIcon },
@@ -29,6 +30,12 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     // Redirect to the home page if they are already signed in.
     return redirect("/");
   }
+  const token_type = session.get("token_type");
+  const access_token = session.get("access_token");
+  OpenAPI.HEADERS = {
+    Authorization: token_type + " " + access_token,
+  };
+
   return json({
     user: await UsersService.readUsersMe(),
   });

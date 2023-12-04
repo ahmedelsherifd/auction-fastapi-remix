@@ -40,14 +40,6 @@ export async function action({ request }: ActionFunctionArgs) {
     session.set("access_token", token.access_token);
     session.set("token_type", token.token_type);
 
-    // Login succeeded, send them to the home page.
-    //const session = await getSession(request.headers.get("Cookie"));
-    // const token_type = session.get("token_type");
-    // const access_token = session.get("access_token");
-    // OpenAPI.HEADERS = {
-    //   Authorization: token_type + " " + access_token,
-    // };
-    onLogin(session);
     return redirect("/dashboard", {
       headers: {
         "Set-Cookie": await commitSession(session),
@@ -67,8 +59,9 @@ export default function Login() {
     <div className="min-h-full flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <img
-          className="mx-auto h-12 w-auto"
-          src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+          className="mx-auto h-24 w-auto"
+          //src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+          src="https://i.postimg.cc/nrnFPbs7/logo.png"
           alt="Workflow"
         />
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
