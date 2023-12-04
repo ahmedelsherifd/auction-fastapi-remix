@@ -20,7 +20,8 @@ site_build
 venv
 docs.zip
 archive.zip
-
+Dockerfile
+.env.prod
 # vim temporary files
 *~
 .*.sw?

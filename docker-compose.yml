@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  auctionbackend:
+    environment:
+      - env=production
+    build: 
+      context: ./services/backend
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
+    
+  auctionfrontend:
+    build:
+      context: ./services/frontend
+      dockerfile: Dockerfile
+
+    ports:
+      - 80:3000
+
+    depends_on:
+      - auctionbackend
